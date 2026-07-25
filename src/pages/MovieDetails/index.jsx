@@ -1,7 +1,7 @@
 import { useParams, Navigate } from 'react-router-dom'
 import Header from '../../components/Header'
 import moviesData from '../../data/movies'
-import { useWatchLater } from '../../context/WatchLaterContext'
+import useWatchLater from '../../hooks/useWatchLater'
 import './index.css'
 
 const MovieDetails = () => {

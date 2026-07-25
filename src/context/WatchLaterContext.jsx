@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from 'react'
+import { createContext, useState, useEffect } from 'react'
 
 const LOCAL_STORAGE_KEY = 'nxtflix_watch_later'
 
@@ -55,7 +55,5 @@ export const WatchLaterProvider = ({ children }) => {
     </WatchLaterContext.Provider>
   )
 }
-
-export const useWatchLater = () => useContext(WatchLaterContext)
 
 export default WatchLaterContext
