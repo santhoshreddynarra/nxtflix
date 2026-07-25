@@ -27,19 +27,19 @@
   max-width: 1200px;
   min-height: 80vh;
   margin: 20px;
-  background: rgba(20, 20, 30, 0.65);
+  background: rgba(20, 20, 30, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 20px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
   overflow: hidden;
 }
 
 /* Left Side: Brand Section */
 .brand-container {
   width: 50%;
-  background: linear-gradient(130deg, rgba(15, 15, 20, 0.9) 0%, rgba(229, 9, 20, 0.25) 100%),
+  background: linear-gradient(130deg, rgba(15, 15, 20, 0.9) 0%, rgba(229, 9, 20, 0.3) 100%),
     url('https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
   color: #ffffff;
   display: flex;
@@ -53,8 +53,9 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, transparent 0%, rgba(10, 10, 15, 0.7) 100%);
+  background: radial-gradient(circle at center, transparent 0%, rgba(10, 10, 15, 0.75) 100%);
   pointer-events: none;
+  z-index: 0;
 }
 
 .brand-logo {
@@ -62,8 +63,9 @@
   font-weight: 900;
   color: #e50914;
   letter-spacing: 2px;
-  text-shadow: 0 4px 12px rgba(229, 9, 20, 0.4);
+  text-shadow: 0 4px 12px rgba(229, 9, 20, 0.5);
   margin-bottom: 24px;
+  position: relative;
   z-index: 1;
 }
 
@@ -73,7 +75,9 @@
   line-height: 1.2;
   margin-bottom: 16px;
   color: #ffffff;
+  position: relative;
   z-index: 1;
+  text-align: left;
 }
 
 .brand-tagline {
@@ -81,23 +85,26 @@
   color: #d1d5db;
   margin-bottom: 36px;
   line-height: 1.5;
+  position: relative;
   z-index: 1;
+  text-align: left;
 }
 
 .brand-badges {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  position: relative;
   z-index: 1;
 }
 
 .badge {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   color: #f3f4f6;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
   padding: 8px 16px;
   border-radius: 20px;
 }
@@ -109,7 +116,8 @@
   justify-content: center;
   align-items: center;
   padding: 50px;
-  background: rgba(15, 15, 22, 0.85);
+  background: rgba(15, 15, 22, 0.95);
+  color: #ffffff;
 }
 
 .login-form {
@@ -124,6 +132,7 @@
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 30px;
+  text-align: left;
 }
 
 .input-group {
@@ -138,6 +147,7 @@
   letter-spacing: 1.2px;
   color: #9ca3af;
   margin-bottom: 8px;
+  text-align: left;
 }
 
 .input-group input {
@@ -210,8 +220,8 @@
 }
 
 .error-banner {
-  background: rgba(220, 38, 38, 0.15);
-  border: 1px solid rgba(239, 68, 68, 0.4);
+  background: rgba(220, 38, 38, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.5);
   color: #fca5a5;
   padding: 12px 16px;
   border-radius: 8px;
