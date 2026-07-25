@@ -1,5 +1,5 @@
 import { Link, useNavigate, useLocation } from 'react-router-dom'
-import Cookies from 'js-cookie'
+import { logout } from '../../api/auth'
 import './index.css'
 
 const Header = () => {
@@ -7,7 +7,7 @@ const Header = () => {
   const location = useLocation()
 
   const onClickLogout = () => {
-    Cookies.remove('jwt_token')
+    logout()
     navigate('/login', { replace: true })
   }
 

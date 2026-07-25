@@ -1,3 +1,5 @@
+import Cookies from 'js-cookie'
+
 const AUTH_API_URL = 'https://serverless-api-teal.vercel.app/api/auth/signin'
 
 /**
@@ -22,7 +24,6 @@ export const signIn = async (email, password) => {
     throw new Error(errorMsg)
   }
 
-  // Support token extraction from data.data.token or data.token
   const token = data?.data?.token || data?.token
 
   if (!token) {
@@ -30,4 +31,11 @@ export const signIn = async (email, password) => {
   }
 
   return { token, data }
+}
+
+/**
+ * Logout user by removing jwt_token cookie
+ */
+export const logout = () => {
+  Cookies.remove('jwt_token')
 }
