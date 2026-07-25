@@ -22,8 +22,8 @@ export const WatchLaterProvider = ({ children }) => {
   useEffect(() => {
     try {
       localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(watchLater))
-    } catch (err) {
-      console.error('Failed to save watch later items to localStorage:', err)
+    } catch {
+      // ignore
     }
   }, [watchLater])
 
@@ -38,9 +38,8 @@ export const WatchLaterProvider = ({ children }) => {
       const exists = prevList.some((item) => String(item.id) === String(movie.id))
       if (exists) {
         return prevList.filter((item) => String(item.id) !== String(movie.id))
-      } else {
-        return [...prevList, movie]
       }
+      return [...prevList, movie]
     })
   }
 

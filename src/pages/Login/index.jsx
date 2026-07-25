@@ -12,7 +12,6 @@ const Login = () => {
 
   const navigate = useNavigate()
 
-  // Redirect if already authenticated
   const token = Cookies.get('jwt_token')
   if (token) {
     return <Navigate to="/" replace />
@@ -36,7 +35,6 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      {/* Left Side: Brand Section */}
       <div className="brand-container">
         <h1>NXTFLIX</h1>
         <p>
@@ -46,7 +44,6 @@ const Login = () => {
         </p>
       </div>
 
-      {/* Right Side: Form Section */}
       <div className="form-container">
         <form onSubmit={submitForm}>
           <h1>Sign In</h1>

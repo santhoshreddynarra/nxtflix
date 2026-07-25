@@ -10,7 +10,6 @@ const MovieDetails = () => {
 
   const movie = moviesData.find((item) => String(item.id) === String(id))
 
-  // Invalid movie ID -> redirect to NotFound
   if (!movie) {
     return <Navigate to="/not-found" replace />
   }
@@ -34,7 +33,6 @@ const MovieDetails = () => {
     <div className="movie-details-page">
       <Header />
 
-      {/* Backdrop Section */}
       <div
         className="details-hero"
         style={{ backgroundImage: `url(${backdrop_url || poster_url})` }}
@@ -42,12 +40,10 @@ const MovieDetails = () => {
         <div className="details-hero-overlay" />
 
         <div className="details-hero-container">
-          {/* Poster */}
           <div className="details-poster-card">
             <img src={poster_url} alt={title} className="details-poster-img" />
           </div>
 
-          {/* Details Info */}
           <div className="details-info">
             <div className="details-badges">
               <span className="genre-badge">{genre}</span>
