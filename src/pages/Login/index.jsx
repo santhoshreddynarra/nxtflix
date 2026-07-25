@@ -36,65 +36,47 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <div className="login-content">
-        {/* Left Side: Brand Section */}
-        <div className="brand-container">
-          <div className="brand-logo">NXTFLIX</div>
-          <h1 className="brand-title">
-            Unlimited movies, shows and more.
-          </h1>
-          <p className="brand-tagline">
-            Watch anywhere. Cancel anytime.
-          </p>
-          <div className="brand-badges">
-            <span className="badge">HD & 4K Ultra</span>
-            <span className="badge">No Ads</span>
-            <span className="badge">Cancel Anytime</span>
-          </div>
-        </div>
+      {/* Left Side: Brand Section */}
+      <div className="brand-container">
+        <h1>NXTFLIX</h1>
+        <p>
+          Unlimited movies, shows and more.
+          <br />
+          Watch anywhere. Cancel anytime.
+        </p>
+      </div>
 
-        {/* Right Side: Form Section */}
-        <div className="form-container">
-          <form className="login-form" onSubmit={submitForm}>
-            <h2 className="form-title">Sign In</h2>
+      {/* Right Side: Form Section */}
+      <div className="form-container">
+        <form onSubmit={submitForm}>
+          <h1>Sign In</h1>
 
-            <div className="input-group">
-              <label htmlFor="email">EMAIL</label>
-              <input
-                id="email"
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                required
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
+          <label htmlFor="email">EMAIL</label>
+          <input
+            id="email"
+            type="email"
+            placeholder="Enter your email"
+            value={email}
+            required
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
-            <div className="input-group">
-              <label htmlFor="password">PASSWORD</label>
-              <input
-                id="password"
-                type="password"
-                placeholder="Enter your password"
-                value={password}
-                required
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
+          <label htmlFor="password">PASSWORD</label>
+          <input
+            id="password"
+            type="password"
+            placeholder="Enter your password"
+            value={password}
+            required
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
-            <button type="submit" className="submit-btn" disabled={isLoading}>
-              {isLoading ? (
-                <span className="btn-loader">
-                  <span className="spinner"></span> Signing In...
-                </span>
-              ) : (
-                'Sign In'
-              )}
-            </button>
+          <button type="submit" disabled={isLoading}>
+            {isLoading ? 'Signing in...' : 'Sign In'}
+          </button>
 
-            {errorMsg && <p className="error-banner">{errorMsg}</p>}
-          </form>
-        </div>
+          {errorMsg && <p className="error-banner">{errorMsg}</p>}
+        </form>
       </div>
     </div>
   )
