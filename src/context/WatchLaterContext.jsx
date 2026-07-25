@@ -6,6 +6,7 @@ const WatchLaterContext = createContext({
   watchLater: [],
   isInWatchLater: () => false,
   toggleWatchLater: () => {},
+  removeFromWatchLater: () => {},
 })
 
 export const WatchLaterProvider = ({ children }) => {
@@ -43,12 +44,18 @@ export const WatchLaterProvider = ({ children }) => {
     })
   }
 
+  const removeFromWatchLater = (id) => {
+    if (!id) return
+    setWatchLater((prevList) => prevList.filter((item) => String(item.id) !== String(id)))
+  }
+
   return (
     <WatchLaterContext.Provider
       value={{
         watchLater,
         isInWatchLater,
         toggleWatchLater,
+        removeFromWatchLater,
       }}
     >
       {children}

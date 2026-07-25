@@ -46,6 +46,8 @@
   transition: color 0.2s ease, text-shadow 0.2s ease;
   position: relative;
   padding: 4px 0;
+  display: inline-flex;
+  align-items: center;
 }
 
 .nav-link:hover,
@@ -64,6 +66,23 @@
   background: #e50914;
   border-radius: 2px;
   box-shadow: 0 0 8px rgba(229, 9, 20, 0.8);
+}
+
+.watch-count {
+  background: #e50914;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-left: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  line-height: 1;
+  box-shadow: 0 2px 8px rgba(229, 9, 20, 0.5);
 }
 
 .logout-btn {

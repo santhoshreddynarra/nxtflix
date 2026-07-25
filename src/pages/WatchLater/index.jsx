@@ -5,7 +5,7 @@ import useWatchLater from '../../hooks/useWatchLater'
 import './index.css'
 
 const WatchLater = () => {
-  const { watchLater } = useWatchLater()
+  const { watchLater, toggleWatchLater } = useWatchLater()
 
   return (
     <div className="watch-later-page">
@@ -23,7 +23,16 @@ const WatchLater = () => {
         {watchLater.length > 0 ? (
           <div className="watch-later-grid">
             {watchLater.map((movie) => (
-              <MovieCard key={movie.id} movie={movie} />
+              <div key={movie.id} className="watch-later-card-item">
+                <MovieCard movie={movie} />
+                <button
+                  type="button"
+                  className="remove-btn"
+                  onClick={() => toggleWatchLater(movie)}
+                >
+                  Remove from Watch Later
+                </button>
+              </div>
             ))}
           </div>
         ) : (

@@ -1,10 +1,12 @@
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { logout } from '../../api/auth'
+import useWatchLater from '../../hooks/useWatchLater'
 import './index.css'
 
 const Header = () => {
   const navigate = useNavigate()
   const location = useLocation()
+  const { watchLater } = useWatchLater()
 
   const onClickLogout = () => {
     logout()
@@ -31,7 +33,7 @@ const Header = () => {
               location.pathname === '/watch-later' ? 'active' : ''
             }`}
           >
-            Watch Later
+            Watch Later <span className="watch-count">{watchLater.length}</span>
           </Link>
         </nav>
 
